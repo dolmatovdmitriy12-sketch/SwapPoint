@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SwapPoint — Best Currency Exchange</title>
+  <meta name="description" content="SwapPoint — Best rates, best terms, 24/7 support. Secure currency exchange."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <!-- Inline logo file use: keep logo.svg in same folder -->
+      <a href="index.html" class="brand" aria-label="SwapPoint home">
+        <img src="logo.svg" alt="SwapPoint logo" class="logo">
+        <span class="brand-name">SwapPoint</span>
+      </a>
+
+      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#why">Why SwapPoint</a>
+        <a class="nav-link" href="#contact">Contact</a>
+        <a class="support-btn" href="https://t.me/Dmitriy_D_olmatov" target="_blank" rel="noopener noreferrer">
+          Support
+        </a>
+      </nav>
+      <button class="mobile-toggle" aria-expanded="false" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home" aria-label="Hero">
+      <div class="hero-content">
+        <h1 class="title">Best rates. Best terms. 24/7 Support.</h1>
+        <p class="subtitle">
+          Fast, secure and transparent currency exchange. We offer competitive rates and the best conditions for every transaction.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#rates">Check Rates</a>
+          <a class="btn outline" href="https://t.me/Dmitriy_D_olmatov" target="_blank" rel="noopener noreferrer">Contact Support</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <!-- decorative large SVG (same logo but white for contrast) -->
+        <img src="logo.svg" alt="" class="logo-big">
+      </div>
+    </section>
+
+    <section id="why" class="features">
+      <div class="container">
+        <article class="feature-card">
+          <h3>Best rate</h3>
+          <p>We constantly compare market prices to offer you the most favorable exchange rates.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Best terms</h3>
+          <p>Transparent fees, fast processing and clear receipts for every transaction.</p>
+        </article>
+        <article class="feature-card">
+          <h3>24/7 Support</h3>
+          <p>Always-on support through Telegram — help is just a message away.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="rates" class="rates-section">
+      <div class="container">
+        <h2>Exchange Rates</h2>
+        <p class="muted">For detailed cross rates and historical data you can open Investing.com (external).</p>
+
+        <div class="rates-actions">
+          <a class="btn outline" href="https://ru.investing.com/currencies/single-currency-crosses" target="_blank" rel="noopener noreferrer">
+            Open Investing.com Rates
+          </a>
+        </div>
+
+        <div class="demo-rates" aria-live="polite">
+          <!-- Static sample table (replaceable with live API) -->
+          <table>
+            <thead>
+              <tr><th>Currency</th><th>Rate (per 1 USD)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>EUR</td><td>0.92</td></tr>
+              <tr><td>GBP</td><td>0.79</td></tr>
+              <tr><td>RUB</td><td>90.10</td></tr>
+              <tr><td>UAH</td><td>36.80</td></tr>
+            </tbody>
+          </table>
+          <p class="muted small">Note: sample values. For live rates integrate an API (instructions below).</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about container">
+      <h2>About SwapPoint</h2>
+      <p>SwapPoint is a professional currency exchange service focused on safe, fast, and transparent transactions. We provide convenient services both for walk-in clients and online users.</p>
+    </section>
+
+    <section id="contact" class="contact container">
+      <h2>Contact & Support</h2>
+      <p>Round-the-clock support via Telegram. Click the button to start a conversation.</p>
+      <a class="btn primary" href="https://t.me/Dmitriy_D_olmatov" target="_blank" rel="noopener noreferrer">Support in Telegram</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> SwapPoint — Secure Currency Exchange</div>
+      <div class="footer-links">
+        <a href="#rates">Exchange Rates</a>
+        <a href="https://t.me/Dmitriy_D_olmatov" target="_blank" rel="noopener noreferrer">Support</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // small script for year and mobile menu behavior
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const toggle = document.querySelector('.mobile-toggle');
+    const nav = document.querySelector('.main-nav');
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      nav.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
